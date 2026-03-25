@@ -1,46 +1,78 @@
-# Ex.No:5(C)    GETTER AND SETTER METHOD
+# Ex.No:5(B) TIGHTLY ENCAPSULATED CLASS
 
 ## AIM:
-To Create a java program to print the sum of two number using getter and setter method.
-
+To Create a java program to display the reverse string and  use tightly encapsulated class.
 ## ALGORITHM :
-1.  Start the Program
-2.	Define class `Employee`:
--	a) Private variables `n1` and `n2`
--	b) Method `setsum(int n1, int n2)` to set values of `n1` and `n2`
--	c) Method `getsum()` to calculate and print `sum = n1 + n2`
-3.	In `main` class `main` method:
--	a) Use `Scanner` to read integers `n1` and `n2`
--	b) Create ` Employee ` object, set values, and call `getsum()`
-4.	End
 
+1. Start the program and import Scanner for user input.
 
+2. Create a StringReverser class with:
+
+   A private String variable text.
+   
+   A method setText to store user input.
+
+   A method getReversedText that uses StringBuilder to reverse and return the text.
+
+3. In the Main class, create:
+
+   A Scanner object to read user input.
+   
+   A StringReverser object to process the input.
+
+4. Read a string input from the user, set it using setText, and print the reversed text using getReversedText.
+
+5. Close the Scanner and end the program.
 ## PROGRAM:
- ```
-/*
-Program to implement a Getter and Setter using Java
-Developed by: 
-RegisterNumber:  
-*/
-```
+
 
 ## Sourcecode.java:
 
 
+```java
+import java.util.Scanner;
 
+class StringReverser {
+    private String text;
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public String getReversedText() {
+        StringBuilder sb = new StringBuilder(text);
+        return sb.reverse().toString();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        StringReverser sr = new StringReverser();
+
+        String input = scanner.nextLine();
+        sr.setText(input);
+
+        System.out.println(sr.getReversedText());
+        scanner.close();
+    }
+}
+```
 
 
 
 
 ## OUTPUT:
 
+```
+Input     Expected    Got
 
+pot       top         top
+
+lap       pal         pal
+
+```
 
 ## RESULT:
-Thus the java program to print the sum of two number using getter and setter method was executed successfully.
-
-
-
-
-
+Thus a java program to display the reverse string and  use tightly encapsulated classwas executed successfully.
 
