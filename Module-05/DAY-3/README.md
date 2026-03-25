@@ -1,78 +1,81 @@
-# Ex.No:5(B) TIGHTLY ENCAPSULATED CLASS
+# Ex.No:5(C)    GETTER AND SETTER METHOD
 
 ## AIM:
-To Create a java program to display the reverse string and  use tightly encapsulated class.
+To Create a java program to print fibonacci series for given number , to read and display the value with the help of setter and getter method.
+
 ## ALGORITHM :
+1. Start the program and import Scanner to take user input.
 
-1. Start the program and import Scanner for user input.
+2. Create a Fibonacci class with:
 
-2. Create a StringReverser class with:
+3. A private int variable count.
 
-   A private String variable text.
+   Methods setCount(int) to set the number of terms and getCount() to retrieve it.
    
-   A method setText to store user input.
+   A printSeries() method to generate and print the Fibonacci series using a loop.
 
-   A method getReversedText that uses StringBuilder to reverse and return the text.
+4. In the Main class:
 
-3. In the Main class, create:
-
-   A Scanner object to read user input.
+   Create a Scanner object and a Fibonacci object.
    
-   A StringReverser object to process the input.
-
-4. Read a string input from the user, set it using setText, and print the reversed text using getReversedText.
+   Read an integer input from the user to decide how many terms to generate.
+   
+   Set the count in the Fibonacci object and call printSeries() to display the series.
 
 5. Close the Scanner and end the program.
+
+
 ## PROGRAM:
 
 
 ## Sourcecode.java:
-
-
 ```java
 import java.util.Scanner;
 
-class StringReverser {
-    private String text;
+class Fibonacci {
+    private int count;
 
-    public void setText(String text) {
-        this.text = text;
+    public void setCount(int count) {
+        this.count = count;
     }
 
-    public String getReversedText() {
-        StringBuilder sb = new StringBuilder(text);
-        return sb.reverse().toString();
+    public int getCount() {
+        return count;
+    }
+
+    public void printSeries() {
+        int n1 = 0, n2 = 1;
+        for (int i = 0; i < count; i++) {
+            System.out.print(n1 + " ");
+            int next = n1 + n2;
+            n1 = n2;
+            n2 = next;
+        }
     }
 }
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        StringReverser sr = new StringReverser();
+        Scanner sc = new Scanner(System.in);
+        Fibonacci fib = new Fibonacci();
 
-        String input = scanner.nextLine();
-        sr.setText(input);
+        int input = sc.nextInt();
+        fib.setCount(input);
+        fib.printSeries();
 
-        System.out.println(sr.getReversedText());
-        scanner.close();
+        sc.close();
     }
 }
 ```
 
-
-
-
 ## OUTPUT:
 
-```
-Input     Expected    Got
+![image](https://github.com/user-attachments/assets/3cfe3f3a-da7e-4dc9-99c1-92be88adc82b)
 
-pot       top         top
-
-lap       pal         pal
-
-```
 
 ## RESULT:
-Thus a java program to display the reverse string and  use tightly encapsulated classwas executed successfully.
+Thus the java program to print fibonacci series for given number , to read and display the value with the help of setter and getter method.was executed successfully.
+
+
+
 
